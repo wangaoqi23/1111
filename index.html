@@ -86,23 +86,41 @@
             }
         }
     </style>
+    <!-- 在<head>标签末尾（</head>前）添加 -->
+<audio autoplay loop id="bgm">
+  <source src="13.mp3" type="audio/mpeg">
+  您的浏览器不支持音频播放
+</audio>
 </head>
 <body>
+    <!-- 在<body>标签开始处添加静音提示 -->
+<div style="position: fixed; top:10px; right:10px; color: white; font-size:12px;">
+  ▶ 点击任意位置开启音乐
+</div>
     <!-- 花瓣容器 -->
     <div id="petals"></div>
 
     <div class="container">
         <div class="heart">❤</div>
-        <h1 class="title">妈妈，母亲节快乐！</h1>
+        <h1 class="title">朱总，母亲节快乐！</h1>
         
         <div class="content">
             <p>感谢您多年的辛勤付出，</p >
             <p>您的爱如同春天的阳光温暖我心，</p >
             <p>愿时光慢些走，愿您永远健康美丽！</p >
+            <p>我保证好好学美术！</p >
         </div>
 
         <div class="heart">❤</div>
     </div>
+    <script>
+// 添加音乐播放控制（解决微信自动播放限制）
+document.addEventListener('click', function() {
+  const audio = document.getElementById('bgm');
+  audio.play();
+  audio.volume = 0.5; // 设置音量50%
+});
+</script>
 
     <script>
         // 创建花瓣动画
